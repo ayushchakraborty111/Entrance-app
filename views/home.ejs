@@ -1,0 +1,39 @@
+<%- include('./partials/header') %> 
+    <section>
+        <a href="/home/enter" class="text-right"><button id="enter">Enter The Building</button></a>
+        <h2 style="text-align: center;" class="text-danger">Registered People</h2>
+        <table id="firstTable" class="text-danger font-weight-bold">
+        <%for(let d of data){%>
+                <tr id="firstrow">
+                    <td><strong>ID</strong></td><td><%=d.id%></td>
+                    </tr>
+                <tr>
+                <td><strong>Name</strong></td><td><%=d.name%></td>
+                </tr>
+                <tr>
+                    <td><strong>Email:</strong></td><td><%=d.email%></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone</strong></td><td><%=d.phone%></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Check In Time:</strong></td><td><%if(d.cinh<=9){%><%=0%><%}%><%=d.cinh%>:<%if(d.cinm<=9){%><%=0%><%}%><%=d.cinm%></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status:</strong></td><td><%=d.status%></td>
+                <%if(d.status==="Present"){%>
+                  <tr id="lastrow">  
+                <td><a href="/home/<%=d.id%>""><button id="exit">Exit the building</button>&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+                <%}else{%>
+                <tr>
+                    <td><strong>Check Out Time:</strong></td><td><%if(d.couth<=9){%><%=0%><%}%><%=d.couth%>:<%if(d.coutm<=9){%><%=0%><%}%><%=d.coutm%></td>
+                </tr><tr id="lastrow"><td></td>
+                    <%}%>
+                <form action="home/<%=d.id%>?_method=DELETE" method="POST">
+                 <td><button id="delete" type="submit">Delete Entry</button></td>
+                 </tr>
+            </form>
+            <%}%>
+        </table>
+</section>
+<%- include('./partials/footer') %> 
