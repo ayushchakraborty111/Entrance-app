@@ -46,3 +46,8 @@ tr{
     font-size: 1.3rem;
     color: chartreuse;
 }
+
+#legend{
+    color: yellow;
+    font-size: 20px;
+}
