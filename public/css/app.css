@@ -41,3 +41,8 @@ tr{
     margin-left: 900px;
     margin-top: 60px;
 }
+
+.fa-home{
+    font-size: 1.3rem;
+    color: chartreuse;
+}
