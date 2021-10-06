@@ -1,7 +1,7 @@
 <%- include('./partials/header') %> 
     <section>
         <form action="/home/<%=d.id%>?_method=PUT" method="POST">
-            <legend>Enter check out time(in 24 hrs format</legend>
+            <legend class="text-warning font-weight-bold">Enter check out time(in 24 hrs format</legend>
             <input type="number" name="couth" id="couth" min="0" max="23" required>
             <input type="number" name="coutm" id="coutm" min="0" max="59" required>
             <button type="submit" style="background-color: lightgreen;">Exit</button>
